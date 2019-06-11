@@ -114,6 +114,34 @@ class Inventory extends CI_Controller {
 		}
 	}
 
+	public function deposit(){
+		$id = $this->input->post('id');
+		$stok = $this->input->post('stok');
+
+		$req = $this->inventory->deposit($id,$stok);
+		if($req){
+			$this->session->set_flashdata('success','new stok has been updated!');
+						redirect('inventory/');
+		}else{
+			$this->session->set_flashdata('error','Failed update new stok!');
+						redirect('inventory/');
+		}
+	}
+
+	public function withdrawal(){
+		$id = $this->input->post('id');
+		$stok = $this->input->post('stok');
+
+		$req = $this->inventory->withdrawal($id,$stok);
+		if($req){
+			$this->session->set_flashdata('success','new stok has been updated!');
+						redirect('inventory/');
+		}else{
+			$this->session->set_flashdata('error','Failed update new stok!');
+						redirect('inventory/');
+		}
+	}
+
 
 	function _rules(){
 		$this->form_validation->set_rules('nama_barang', 'Nama Item', 'trim|required');

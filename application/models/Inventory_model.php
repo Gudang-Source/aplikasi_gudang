@@ -56,4 +56,16 @@ class Inventory_model extends CI_Model{
 		$q = $this->db->delete($this->table);
 		return $q;
 	}
+
+	function deposit($id,$stok){
+		$this->db->set('stok',"stok+$stok",FALSE);
+		$this->db->where('id',$id);
+		$q = $this->db->update($this->table);
+	}
+
+	function withdrawal($id,$stok){
+		$this->db->set('stok',"stok-$stok",FALSE);
+		$this->db->where('id',$id);
+		$q = $this->db->update($this->table);
+	}
 }

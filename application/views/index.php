@@ -1245,6 +1245,9 @@
 <script src="<?php echo base_url()?>/assets/js/scripts.js"></script>
 
 
+<!-- modifikasi js -->
+<script src="<?php echo base_url()?>/assets/js/app.js"></script>
+
 <script type="text/javascript">
 
     $(document).ready(function() {
